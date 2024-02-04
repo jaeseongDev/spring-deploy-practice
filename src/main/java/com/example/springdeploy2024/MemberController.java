@@ -13,6 +13,11 @@ public class MemberController {
     this.memberRepository = memberRepository;
   }
 
+  @GetMapping("/health")
+  public String health() {
+    return "헬쓰 체크 성공!";
+  }
+
   @GetMapping("/members")
   public List<Member> getMembers() {
     return memberRepository.findAll();
